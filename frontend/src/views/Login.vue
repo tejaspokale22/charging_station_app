@@ -10,8 +10,8 @@
 
 <script>
 import AuthForm from "../components/AuthForm.vue";
-import axios from "axios";
 import { useToast } from "vue-toastification";
+import { useAuthStore } from '../stores/auth';
 
 export default {
   name: "Login",
@@ -20,7 +20,8 @@ export default {
   },
   setup() {
     const toast = useToast();
-    return { toast };
+    const authStore = useAuthStore();
+    return { toast, authStore };
   },
   data() {
     return {
@@ -34,17 +35,12 @@ export default {
       this.error = "";
 
       try {
-        const response = await axios.post("/api/auth/login", {
+        await this.authStore.login({
           email: formData.email,
           password: formData.password,
         });
-
-        if (response) {
-          this.toast.success("Login successful!");
-          localStorage.setItem("token", response.data.token);
-        }
-
-        // Redirect to home page
+        
+        this.toast.success("Login successful!");
         this.$router.push("/");
       } catch (err) {
         this.error =

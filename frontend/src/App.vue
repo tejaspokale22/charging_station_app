@@ -1,7 +1,7 @@
 <template>
   <!-- Header -->
   <Header />
-  <RouterView class="min-h-screen pt-18 bg-white"/>
+  <RouterView class="min-h-screen pt-16 bg-white"/>
   <!-- Footer -->
   <Footer />
 </template>

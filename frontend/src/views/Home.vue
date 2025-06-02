@@ -5,7 +5,7 @@
       <div class="container mx-auto px-6">
         <div class="max-w-5xl mx-auto text-center">
           <h1 class="text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-            Charging Station Finder
+            Charging Station Finder 
           </h1>
           <p class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
             Find, create, and manage EV charging stations effortlessly. Join the future of sustainable transportation with our comprehensive charging network.
