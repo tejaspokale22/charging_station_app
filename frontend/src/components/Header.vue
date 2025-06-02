@@ -1,10 +1,10 @@
 <template>
-  <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+  <header class="fixed w-full bg-white/90 backdrop-blur-md">
     <div class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-          <RouterLink to="/" class="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+          <RouterLink to="/" class="text-2xl font-bold text-black">
             CSF
           </RouterLink>
         </div>
@@ -23,7 +23,7 @@
           <RouterLink to="/login" class="text-gray-600 hover:text-black transition-colors font-medium">
             Login
           </RouterLink>
-          <RouterLink to="/register" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+          <RouterLink to="/register" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all duration-300 transform">
             Register
           </RouterLink>
         </div>

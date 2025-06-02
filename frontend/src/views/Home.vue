@@ -1,8 +1,5 @@
 <template>
   <div class="min-h-screen bg-white">
-    <!-- Header -->
-    <Header />
-
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white">
       <div class="container mx-auto px-6">
@@ -88,13 +85,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <Footer />
   </div>
 </template>
-
-<script setup>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
-</script>
   
