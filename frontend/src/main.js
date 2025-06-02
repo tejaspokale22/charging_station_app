@@ -10,7 +10,7 @@ import axios from "axios";
 import "./style.css";
 
 // Configure axios base URL
-axios.defaults.baseURL = "http://charging-station-app-4usl.onrender.com";
+axios.defaults.baseURL = "https://charging-station-app-4usl.onrender.com";
 
 const app = createApp(App);
 const pinia = createPinia();
