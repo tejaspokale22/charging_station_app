@@ -13,7 +13,7 @@ A full-stack web application for managing electric vehicle charging stations. Bu
 
 ## 🚀 Live Demo
 
-Frontend: [https://charging-station-app-nine.vercel.app](https://charging-station-app-nine.vercel.app)
+Frontend: [https://charging-stations-app.netlify.app](https://charging-stations-app.netlify.app)
 Backend: [https://charging-station-app-4usl.onrender.com](https://charging-station-app-4usl.onrender.com)
 
 ## 🛠️ Tech Stack
@@ -164,7 +164,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- Your Name - Initial work - [YourGitHub](https://github.com/yourusername)
+- Tejas Pokale - Initial work - [tejaspokale22](https://github.com/tejaspokale22)
 
 ## 🙏 Acknowledgments
 
