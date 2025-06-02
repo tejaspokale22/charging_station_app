@@ -153,3 +153,49 @@ export const deleteCharger = async (req, res) => {
       .json({ message: error.message || "Failed to delete charger." });
   }
 };
+
+export const getChargersByUser = async (req, res) => {
+  try {
+    const userId = req.user?.id;
+
+    if (!userId) {
+      return res.status(401).json({ message: "Unauthorized access." });
+    }
+
+    const { status, connectorType, minPower } = req.query;
+    const filters = { createdBy: userId };
+
+    // Validate and sanitize status
+    if (status?.trim()) {
+      const trimmedStatus = status.trim();
+      if (["Active", "Inactive"].includes(trimmedStatus)) {
+        filters.status = trimmedStatus;
+      } else {
+        return res.status(400).json({ message: "Invalid status filter" });
+      }
+    }
+
+    // Validate and sanitize connectorType
+    if (connectorType?.trim()) {
+      filters.connectorType = connectorType.trim();
+    }
+
+    // Validate and sanitize minPower
+    if (minPower) {
+      const minPowerNum = Number(minPower);
+      if (!isNaN(minPowerNum) && minPowerNum >= 0) {
+        filters.powerOutput = { $gte: minPowerNum };
+      } else {
+        return res.status(400).json({ message: "Invalid minPower filter" });
+      }
+    }
+
+    const chargers = await Charger.find(filters).populate("createdBy", "email");
+
+    res.status(200).json(chargers);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: error.message || "Failed to fetch user's chargers." });
+  }
+};

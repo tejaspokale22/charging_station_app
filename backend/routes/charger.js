@@ -4,6 +4,7 @@ import {
   getChargers,
   updateCharger,
   deleteCharger,
+  getChargersByUser,
 } from "../controllers/chargerController.js";
 import authMiddleware from "../middlewares/authMiddleware.js"; // Assuming you have an auth middleware
 
@@ -16,5 +17,6 @@ router.get("/", getChargers);
 router.post("/", authMiddleware, createCharger);
 router.put("/:id", authMiddleware, updateCharger);
 router.delete("/:id", authMiddleware, deleteCharger);
+router.get("/chargers", authMiddleware, getChargersByUser);
 
 export default router;
