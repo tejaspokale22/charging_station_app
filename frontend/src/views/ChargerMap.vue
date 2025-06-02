@@ -23,7 +23,6 @@ export default {
   async mounted() {
     try {
       const response = await axios.get('/api/chargers');
-      console.log('Chargers data:', response.data);
       this.chargers = response.data;
       this.initMap();
       this.addMarkers();
