@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center p-4" :class="{ 'fixed inset-0 bg-white/70 z-50': overlay }">
+  <div class="flex justify-center items-center p-4">
     <div class="w-8 h-8 border-4 border-black border-t-gray-200 rounded-full animate-spin"></div>
   </div>
 </template>

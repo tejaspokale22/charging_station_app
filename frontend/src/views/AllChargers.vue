@@ -1,28 +1,28 @@
 <template>
-  <div class="container mx-auto px-4 py-14">
+  <div class="container mx-auto px-4 py-14 pt-28">
     <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">Charging Stations</h2>
     
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center items-center h-64">
-      <Spinner :overlay="true" />
+      <Spinner/>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
       {{ error }}
-    </div>
+    </div>  
 
     <!-- Grid Layout -->
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div v-for="charger in chargers" :key="charger._id" 
            class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-        <div class="h-48 overflow-hidden">
+        <!-- <div class="h-48 overflow-hidden">
           <img 
             src="/chargingStation.jpeg"
             :alt="charger.name"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            class="w-full h-full object-cover"
           />
-        </div>
+        </div> -->
         <div class="p-6">
           <div class="flex justify-between items-start mb-4">
             <h3 class="text-xl font-semibold text-gray-900">{{ charger.name }}</h3>
@@ -40,7 +40,14 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
-              <span>{{ charger.location.latitude.toFixed(4) }}, {{ charger.location.longitude.toFixed(4) }}</span>
+              <a 
+                :href="`https://www.google.com/maps?q=${charger.location.latitude},${charger.location.longitude}`"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-600 hover:text-gray-800 hover:underline"
+              >
+                View on Google Maps
+              </a>
             </div>
             
             <div class="flex items-center text-gray-700">
@@ -81,13 +88,13 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get('http://localhost:5000/api/chargers');
+      const response = await axios.get('/api/chargers');
       this.chargers = response.data;
     } catch (err) {
       this.error = 'Failed to load charging stations. Please try again later.';
       console.error('Error fetching chargers:', err);
     } finally {
-      this.loading = false;
+      this.loading = false; 
     }
   }
 };
