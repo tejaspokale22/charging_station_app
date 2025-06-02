@@ -14,7 +14,7 @@ A full-stack web application for managing electric vehicle charging stations. Bu
 ## 🚀 Live Demo
 
 Frontend: [https://charging-station-app.vercel.app](https://charging-station-app.vercel.app)
-Backend: [https://charging-station-api.onrender.com](https://charging-station-api.onrender.com)
+Backend: [https://charging-station-app-4usl.onrender.com](https://charging-station-app-4usl.onrender.com)
 
 ## 🛠️ Tech Stack
 
