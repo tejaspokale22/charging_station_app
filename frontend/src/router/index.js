@@ -8,6 +8,7 @@ import CreateCharger from "../views/CreateCharger.vue";
 import MyChargers from "../views/MyChargers.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import EditCharger from "../views/EditCharger.vue";
 
 // Route Definitions
 const routes = [
@@ -52,6 +53,12 @@ const routes = [
     name: "Register",
     component: Register,
     meta: { requiresAuth: false },
+  },
+  {
+    path: "/edit-charger/:id",
+    name: "EditCharger",
+    component: EditCharger,
+    meta: { requiresAuth: true },
   },
 ];
 

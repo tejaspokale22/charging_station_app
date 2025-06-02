@@ -2,9 +2,10 @@ import express from "express";
 import {
   createCharger,
   getChargers,
+  getChargersByUser,
   updateCharger,
   deleteCharger,
-  getChargersByUser,
+  getChargerById,
 } from "../controllers/chargerController.js";
 import authMiddleware from "../middlewares/authMiddleware.js"; // Assuming you have an auth middleware
 
@@ -15,8 +16,9 @@ router.get("/", getChargers);
 
 // Protected routes (require authentication)
 router.post("/", authMiddleware, createCharger);
+router.get("/user", authMiddleware, getChargersByUser);
 router.put("/:id", authMiddleware, updateCharger);
 router.delete("/:id", authMiddleware, deleteCharger);
-router.get("/chargers", authMiddleware, getChargersByUser);
+router.get("/:id", authMiddleware, getChargerById);
 
 export default router;

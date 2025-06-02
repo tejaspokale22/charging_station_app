@@ -111,8 +111,8 @@
     </div>
 
     <!-- Delete Confirmation Modal -->
-    <div v-if="showDeleteModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+    <div v-if="showDeleteModal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Confirm Delete</h3>
         <p class="text-gray-600 mb-6">Are you sure you want to delete this charging station? This action cannot be undone.</p>
         <div class="flex justify-end gap-3">
@@ -163,7 +163,7 @@ export default {
           return;
         }
 
-        const response = await axios.get('/api/chargers', {
+        const response = await axios.get('/api/chargers/user', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
