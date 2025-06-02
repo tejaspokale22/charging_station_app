@@ -1,4 +1,4 @@
-# Charging Station Management System
+# ⚡Full Stack Charging Station App
 
 A full-stack web application for managing electric vehicle charging stations. Built with Vue.js, Node.js, and MongoDB.
 
@@ -13,7 +13,7 @@ A full-stack web application for managing electric vehicle charging stations. Bu
 
 ## 🚀 Live Demo
 
-Frontend: [https://charging-station-app.vercel.app](https://charging-station-app.vercel.app)
+Frontend: [https://charging-station-app-nine.vercel.app](https://charging-station-app-nine.vercel.app)
 Backend: [https://charging-station-app-4usl.onrender.com](https://charging-station-app-4usl.onrender.com)
 
 ## 🛠️ Tech Stack
